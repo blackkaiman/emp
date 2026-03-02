@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMP — Energie Electrică | Producție · Distribuție · Furnizare</title>
-    <meta name="description" content="EMP reunește sub un singur acoperiș producția, distribuția și furnizarea de energie electrică. Soluții energetice complete pentru sectorul industrial și consumatori.">
+    <title>EMP — Energie Electrică Verde | Producție · Distribuție · Furnizare</title>
+    <meta name="description" content="EMP reunește sub un singur acoperiș producția, distribuția și furnizarea de energie electrică din surse regenerabile. Soluții energetice verzi pentru un viitor sustenabil.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     <style>
         /* =============================================
            EMP.RO — Coming Soon Landing Page
-           Tema: Dark Energy — #0a0f1c + Electric Blue
+           Tema: Eco Energy — Dark + Green Renewable
            ============================================= */
         *, *::before, *::after {
             margin: 0;
@@ -21,24 +21,26 @@
         }
 
         :root {
-            --emp-dark: #0a0f1c;
-            --emp-dark-mid: #111827;
-            --emp-dark-card: #151c2e;
-            --emp-blue: #3b82f6;
-            --emp-blue-light: #60a5fa;
-            --emp-cyan: #22d3ee;
-            --emp-green: #10b981;
+            --emp-dark: #0a1a0f;
+            --emp-dark-mid: #0f1f14;
+            --emp-dark-card: #0f2318;
+            --emp-green: #22c55e;
+            --emp-green-light: #4ade80;
+            --emp-green-pale: #86efac;
+            --emp-emerald: #10b981;
+            --emp-teal: #14b8a6;
+            --emp-lime: #a3e635;
             --emp-amber: #f59e0b;
-            --emp-white: #f1f5f9;
+            --emp-sky: #38bdf8;
+            --emp-white: #f0fdf4;
             --emp-gray: #94a3b8;
-            --emp-gray-dark: #475569;
-            --emp-border: rgba(59, 130, 246, 0.15);
-            --emp-glow: rgba(59, 130, 246, 0.4);
+            --emp-gray-green: #6b9080;
+            --emp-gray-dark: #3d5a4a;
+            --emp-border: rgba(34, 197, 94, 0.15);
+            --emp-glow: rgba(34, 197, 94, 0.4);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -62,46 +64,74 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(34, 197, 94, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 197, 94, 0.025) 1px, transparent 1px);
             background-size: 60px 60px;
         }
 
         .emp-bg-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.3;
-            animation: empFloat 20s ease-in-out infinite;
+            filter: blur(120px);
+            opacity: 0.25;
+            animation: empFloat 25s ease-in-out infinite;
         }
 
         .emp-bg-orb-1 {
             width: 600px; height: 600px;
-            background: radial-gradient(circle, var(--emp-blue) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--emp-green) 0%, transparent 70%);
             top: -200px; right: -150px;
-            animation-delay: 0s;
         }
 
         .emp-bg-orb-2 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, var(--emp-cyan) 0%, transparent 70%);
-            bottom: -100px; left: -100px;
-            animation-delay: -7s;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--emp-teal) 0%, transparent 70%);
+            bottom: -150px; left: -100px;
+            animation-delay: -8s;
         }
 
         .emp-bg-orb-3 {
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, var(--emp-green) 0%, transparent 70%);
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -14s;
-            opacity: 0.15;
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, var(--emp-lime) 0%, transparent 70%);
+            top: 40%; left: 60%;
+            animation-delay: -16s;
+            opacity: 0.12;
         }
 
         @keyframes empFloat {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -20px) scale(1.05); }
-            66% { transform: translate(-20px, 15px) scale(0.95); }
+            33% { transform: translate(30px, -25px) scale(1.05); }
+            66% { transform: translate(-25px, 20px) scale(0.95); }
+        }
+
+        /* === FLOATING LEAVES === */
+        .emp-leaf {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            animation: empLeafFall linear infinite;
+        }
+
+        .emp-leaf svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--emp-green);
+            opacity: 0.12;
+        }
+
+        .emp-leaf:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; }
+        .emp-leaf:nth-child(2) { left: 25%; animation-duration: 22s; animation-delay: -4s; }
+        .emp-leaf:nth-child(3) { left: 45%; animation-duration: 20s; animation-delay: -8s; }
+        .emp-leaf:nth-child(4) { left: 65%; animation-duration: 24s; animation-delay: -12s; }
+        .emp-leaf:nth-child(5) { left: 82%; animation-duration: 19s; animation-delay: -6s; }
+        .emp-leaf:nth-child(6) { left: 55%; animation-duration: 26s; animation-delay: -15s; }
+
+        @keyframes empLeafFall {
+            0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
         /* === WRAPPER === */
@@ -113,12 +143,19 @@
             flex-direction: column;
         }
 
-        /* === HEADER / NAV === */
+        /* === HEADER === */
         .emp-header {
             padding: 24px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .emp-header-left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .emp-logo {
@@ -139,7 +176,7 @@
         .emp-logo-dot {
             width: 10px;
             height: 10px;
-            background: var(--emp-blue);
+            background: var(--emp-green);
             border-radius: 50%;
             display: inline-block;
             margin-left: 2px;
@@ -149,16 +186,35 @@
 
         .emp-logo-sub {
             font-size: 0.65rem;
-            color: var(--emp-gray);
+            color: var(--emp-gray-green);
             letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 500;
             margin-top: -2px;
         }
 
+        .emp-logo-eco {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 100px;
+            padding: 4px 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--emp-green-light);
+            letter-spacing: 0.5px;
+        }
+
+        .emp-logo-eco svg {
+            width: 12px;
+            height: 12px;
+        }
+
         @keyframes empPulse {
             0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--emp-glow); }
-            50% { opacity: 0.6; box-shadow: 0 0 24px var(--emp-glow), 0 0 48px rgba(59, 130, 246, 0.2); }
+            50% { opacity: 0.6; box-shadow: 0 0 24px var(--emp-glow), 0 0 48px rgba(34, 197, 94, 0.15); }
         }
 
         .emp-header-contact {
@@ -183,7 +239,7 @@
         }
 
         .emp-header-contact a:hover {
-            color: var(--emp-blue-light);
+            color: var(--emp-green-light);
         }
 
         /* === HERO === */
@@ -194,25 +250,39 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 24px 60px;
-            max-width: 900px;
+            padding: 20px 24px 60px;
+            max-width: 960px;
             margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Hero Illustration */
+        .emp-hero-illustration {
+            width: 100%;
+            max-width: 720px;
+            margin-bottom: 32px;
+            animation: empFadeUp 0.8s ease-out both;
+        }
+
+        .emp-hero-illustration svg {
+            width: 100%;
+            height: auto;
         }
 
         .emp-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(34, 197, 94, 0.08);
             border: 1px solid var(--emp-border);
             border-radius: 100px;
             padding: 8px 20px;
             font-size: 0.78rem;
             font-weight: 600;
-            color: var(--emp-blue-light);
+            color: var(--emp-green-light);
             letter-spacing: 0.5px;
-            margin-bottom: 32px;
-            animation: empFadeUp 0.8s ease-out both;
+            margin-bottom: 28px;
+            animation: empFadeUp 0.8s ease-out 0.1s both;
         }
 
         .emp-badge-dot {
@@ -225,34 +295,87 @@
 
         .emp-hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1.5px;
             margin-bottom: 20px;
-            animation: empFadeUp 0.8s ease-out 0.15s both;
+            animation: empFadeUp 0.8s ease-out 0.2s both;
         }
 
         .emp-hero h1 .emp-gradient {
-            background: linear-gradient(135deg, var(--emp-blue-light) 0%, var(--emp-cyan) 50%, var(--emp-green) 100%);
+            background: linear-gradient(135deg, var(--emp-green-light) 0%, var(--emp-teal) 40%, var(--emp-sky) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .emp-hero-sub {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--emp-gray);
-            max-width: 600px;
-            line-height: 1.7;
-            margin-bottom: 48px;
+            max-width: 580px;
+            line-height: 1.75;
+            margin-bottom: 40px;
             font-weight: 400;
-            animation: empFadeUp 0.8s ease-out 0.3s both;
+            animation: empFadeUp 0.8s ease-out 0.35s both;
+        }
+
+        .emp-hero-sub strong {
+            color: var(--emp-green-pale);
         }
 
         @keyframes empFadeUp {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === ECO STATS === */
+        .emp-eco-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 48px;
+            animation: empFadeUp 0.8s ease-out 0.45s both;
+        }
+
+        .emp-eco-stat {
+            text-align: center;
+        }
+
+        .emp-eco-stat-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 8px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .emp-eco-stat-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--emp-green-light);
+            stroke: currentColor;
+            fill: none;
+        }
+
+        .emp-eco-stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--emp-white);
+            letter-spacing: -0.5px;
+        }
+
+        .emp-eco-stat-label {
+            font-size: 0.7rem;
+            color: var(--emp-gray-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
         }
 
         /* === DIVISION CARDS === */
@@ -261,16 +384,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             width: 100%;
-            max-width: 760px;
-            margin-bottom: 56px;
-            animation: empFadeUp 0.8s ease-out 0.45s both;
+            max-width: 780px;
+            margin-bottom: 48px;
+            animation: empFadeUp 0.8s ease-out 0.55s both;
         }
 
         .emp-card {
             background: var(--emp-dark-card);
             border: 1px solid var(--emp-border);
             border-radius: 20px;
-            padding: 32px 28px;
+            padding: 28px 24px;
             text-align: left;
             position: relative;
             overflow: hidden;
@@ -279,8 +402,8 @@
 
         .emp-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(59, 130, 246, 0.35);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.08);
+            border-color: rgba(34, 197, 94, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(34, 197, 94, 0.06);
         }
 
         .emp-card::before {
@@ -292,11 +415,18 @@
         }
 
         .emp-card-power::before {
-            background: linear-gradient(90deg, var(--emp-blue) 0%, var(--emp-cyan) 100%);
+            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-teal) 100%);
         }
 
         .emp-card-grid::before {
-            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-amber) 100%);
+            background: linear-gradient(90deg, var(--emp-teal) 0%, var(--emp-sky) 100%);
+        }
+
+        .emp-card-icon-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
         .emp-card-icon {
@@ -306,17 +436,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 18px;
+            flex-shrink: 0;
         }
 
         .emp-card-power .emp-card-icon {
-            background: rgba(59, 130, 246, 0.12);
-            color: var(--emp-blue-light);
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--emp-green-light);
         }
 
         .emp-card-grid .emp-card-icon {
-            background: rgba(16, 185, 129, 0.12);
-            color: var(--emp-green);
+            background: rgba(20, 184, 166, 0.12);
+            color: var(--emp-teal);
         }
 
         .emp-card-icon svg {
@@ -326,36 +456,34 @@
 
         .emp-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 4px;
             letter-spacing: -0.3px;
         }
 
         .emp-card-entity {
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             color: var(--emp-gray-dark);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 14px;
         }
 
         .emp-card p {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: var(--emp-gray);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .emp-card-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-top: 16px;
+            margin-top: 14px;
         }
 
         .emp-tag {
-            font-size: 0.68rem;
+            font-size: 0.66rem;
             font-weight: 600;
             padding: 5px 12px;
             border-radius: 8px;
@@ -363,19 +491,49 @@
         }
 
         .emp-card-power .emp-tag {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--emp-blue-light);
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--emp-green-light);
         }
 
         .emp-card-grid .emp-tag {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--emp-green);
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--emp-teal);
         }
 
-        /* === COMING SOON SECTION === */
+        /* === GREEN LINE === */
+        .emp-line {
+            position: relative;
+            width: 100%;
+            max-width: 780px;
+            height: 1px;
+            background: var(--emp-border);
+            margin: 0 auto 40px;
+            overflow: visible;
+        }
+
+        .emp-line::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--emp-green), var(--emp-teal), transparent);
+            border-radius: 10px;
+            animation: empSpark 4s ease-in-out infinite;
+        }
+
+        @keyframes empSpark {
+            0% { left: -100px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: calc(100% + 100px); opacity: 0; }
+        }
+
+        /* === COMING SOON === */
         .emp-coming {
             text-align: center;
-            animation: empFadeUp 0.8s ease-out 0.6s both;
+            animation: empFadeUp 0.8s ease-out 0.65s both;
             margin-bottom: 40px;
         }
 
@@ -389,13 +547,13 @@
         }
 
         .emp-coming-text {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--emp-gray);
             max-width: 480px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
-        /* === PROGRESS BAR === */
         .emp-progress-wrap {
             width: 100%;
             max-width: 400px;
@@ -418,13 +576,13 @@
 
         .emp-progress-header strong {
             font-size: 0.78rem;
-            color: var(--emp-blue-light);
+            color: var(--emp-green-light);
         }
 
         .emp-progress-bar {
             width: 100%;
             height: 6px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(34, 197, 94, 0.1);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -432,13 +590,13 @@
         .emp-progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--emp-blue) 0%, var(--emp-cyan) 100%);
+            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-teal) 60%, var(--emp-sky) 100%);
             border-radius: 10px;
             transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
         }
 
-        /* === BOTTOM INFO === */
+        /* === FOOTER === */
         .emp-footer {
             padding: 40px 40px 32px;
             display: flex;
@@ -446,7 +604,7 @@
             align-items: flex-end;
             flex-wrap: wrap;
             gap: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(34, 197, 94, 0.08);
         }
 
         .emp-footer-left {
@@ -491,55 +649,43 @@
             color: var(--emp-gray);
         }
 
-        .emp-phone-line strong {
-            color: var(--emp-white);
-            font-weight: 600;
-        }
-
         .emp-phone-line a {
             color: var(--emp-white);
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
         }
 
         .emp-phone-line a:hover {
-            color: var(--emp-blue-light);
+            color: var(--emp-green-light);
+        }
+
+        .emp-footer-eco {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: var(--emp-gray-green);
+            margin-top: 4px;
+        }
+
+        .emp-footer-eco svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--emp-green);
+            opacity: 0.6;
         }
 
         .emp-footer-copy {
             font-size: 0.72rem;
             color: var(--emp-gray-dark);
-            margin-top: 8px;
+            margin-top: 4px;
         }
 
-        /* === ELECTRIC LINE ANIMATION === */
-        .emp-line {
-            position: relative;
-            width: 100%;
-            max-width: 760px;
-            height: 1px;
-            background: var(--emp-border);
-            margin: 0 auto 40px;
-            overflow: visible;
-        }
-
-        .emp-line::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 0;
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(90deg, transparent, var(--emp-blue), var(--emp-cyan), transparent);
-            border-radius: 10px;
-            animation: empSpark 3s ease-in-out infinite;
-        }
-
-        @keyframes empSpark {
-            0% { left: -80px; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { left: calc(100% + 80px); opacity: 0; }
+        /* === TURBINE SPIN === */
+        @keyframes empSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* === RESPONSIVE === */
@@ -550,18 +696,30 @@
                 gap: 12px;
             }
 
+            .emp-logo-eco { margin-left: 0; margin-top: 4px; }
+
             .emp-hero {
-                padding: 24px 20px 40px;
+                padding: 12px 20px 40px;
             }
+
+            .emp-hero-illustration {
+                max-width: 95%;
+                margin-bottom: 24px;
+            }
+
+            .emp-eco-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .emp-eco-stat-value { font-size: 1.3rem; }
 
             .emp-divisions {
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
 
-            .emp-card {
-                padding: 24px 22px;
-            }
+            .emp-card { padding: 22px 20px; }
 
             .emp-footer {
                 padding: 32px 20px 24px;
@@ -569,27 +727,20 @@
                 align-items: flex-start;
             }
 
-            .emp-footer-right {
-                align-items: flex-start;
-            }
+            .emp-footer-right { align-items: flex-start; }
+            .emp-footer-phones { align-items: flex-start; }
+            .emp-logo-text { font-size: 1.7rem; }
+        }
 
-            .emp-footer-phones {
-                align-items: flex-start;
-            }
-
-            .emp-logo-text {
-                font-size: 1.7rem;
-            }
+        @media (max-width: 480px) {
+            .emp-eco-stats { gap: 12px; }
+            .emp-eco-stat-icon { width: 34px; height: 34px; }
+            .emp-eco-stat-icon svg { width: 16px; height: 16px; }
         }
 
         @media (max-width: 400px) {
-            .emp-hero h1 {
-                font-size: 2rem;
-            }
-
-            .emp-card h3 {
-                font-size: 1.1rem;
-            }
+            .emp-hero h1 { font-size: 1.9rem; }
+            .emp-card h3 { font-size: 1.05rem; }
         }
     </style>
 </head>
@@ -603,16 +754,30 @@
     <div class="emp-bg-orb emp-bg-orb-3"></div>
 </div>
 
+<!-- Floating Leaves -->
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+<div class="emp-leaf"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg></div>
+
 <div class="emp-wrapper">
 
     <!-- Header -->
     <header class="emp-header">
-        <a href="/" class="emp-logo">
-            <div>
-                <div class="emp-logo-text">EMP<span class="emp-logo-dot"></span></div>
-                <div class="emp-logo-sub">Energie Electrică</div>
-            </div>
-        </a>
+        <div class="emp-header-left">
+            <a href="/" class="emp-logo">
+                <div>
+                    <div class="emp-logo-text">EMP<span class="emp-logo-dot"></span></div>
+                    <div class="emp-logo-sub">Energie Electrică</div>
+                </div>
+            </a>
+            <span class="emp-logo-eco">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg>
+                Energie Verde
+            </span>
+        </div>
         <div class="emp-header-contact">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             TelVerde: <a href="tel:0800400401">0800 400 401</a>
@@ -622,55 +787,232 @@
     <!-- Hero -->
     <main class="emp-hero">
 
+        <!-- Renewable Energy Landscape Illustration -->
+        <div class="emp-hero-illustration">
+            <svg viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#f59e0b"/>
+                        <stop offset="100%" stop-color="#fb923c"/>
+                    </linearGradient>
+                    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#1e3a5f"/>
+                        <stop offset="100%" stop-color="#0f2340"/>
+                    </linearGradient>
+                    <linearGradient id="panelShine" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.05"/>
+                    </linearGradient>
+                    <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#15803d" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#166534" stop-opacity="0.6"/>
+                    </linearGradient>
+                    <linearGradient id="hillGrad2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#14532d" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#052e16" stop-opacity="0.7"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Sun -->
+                <circle cx="650" cy="55" r="28" fill="url(#sunGrad)" opacity="0.8">
+                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="650" cy="55" r="42" fill="#f59e0b" opacity="0.08">
+                    <animate attributeName="r" values="42;50;42" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="4s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Sun rays -->
+                <g opacity="0.15" stroke="#f59e0b" stroke-width="1.5">
+                    <line x1="650" y1="10" x2="650" y2="20"/><line x1="650" y1="90" x2="650" y2="100"/>
+                    <line x1="605" y1="55" x2="615" y2="55"/><line x1="685" y1="55" x2="695" y2="55"/>
+                    <line x1="618" y1="23" x2="625" y2="30"/><line x1="675" y1="80" x2="682" y2="87"/>
+                    <line x1="682" y1="23" x2="675" y2="30"/><line x1="625" y1="80" x2="618" y2="87"/>
+                </g>
+
+                <!-- Hills -->
+                <path d="M0 200 Q100 140 200 170 Q350 120 450 160 Q550 130 650 155 Q750 140 800 150 L800 260 L0 260Z" fill="url(#hillGrad)"/>
+                <path d="M0 220 Q150 180 300 200 Q450 170 550 195 Q700 175 800 190 L800 260 L0 260Z" fill="url(#hillGrad2)"/>
+
+                <!-- Ground line -->
+                <path d="M0 230 Q200 220 400 225 Q600 222 800 228" stroke="#22c55e" stroke-width="1" opacity="0.2" fill="none"/>
+
+                <!-- Wind Turbine 1 (large) -->
+                <g>
+                    <polygon points="150,230 145,100 155,100" fill="#94a3b8" opacity="0.5"/>
+                    <circle cx="150" cy="100" r="5" fill="#e2e8f0" opacity="0.6"/>
+                    <g style="transform-origin: 150px 100px; animation: empSpin 6s linear infinite;">
+                        <polygon points="150,100 146,32 154,32" fill="#e2e8f0" opacity="0.7"/>
+                        <polygon points="150,100 191,131 187,137" fill="#e2e8f0" opacity="0.7"/>
+                        <polygon points="150,100 109,131 113,137" fill="#e2e8f0" opacity="0.7"/>
+                    </g>
+                </g>
+
+                <!-- Wind Turbine 2 (medium, back) -->
+                <g>
+                    <polygon points="520,230 516,130 524,130" fill="#94a3b8" opacity="0.35"/>
+                    <circle cx="520" cy="130" r="4" fill="#e2e8f0" opacity="0.45"/>
+                    <g style="transform-origin: 520px 130px; animation: empSpin 8s linear infinite;">
+                        <polygon points="520,130 517,75 523,75" fill="#e2e8f0" opacity="0.5"/>
+                        <polygon points="520,130 553,152 550,157" fill="#e2e8f0" opacity="0.5"/>
+                        <polygon points="520,130 487,152 490,157" fill="#e2e8f0" opacity="0.5"/>
+                    </g>
+                </g>
+
+                <!-- Wind Turbine 3 (small, distant) -->
+                <g>
+                    <polygon points="340,230 337,145 343,145" fill="#94a3b8" opacity="0.25"/>
+                    <circle cx="340" cy="145" r="3" fill="#e2e8f0" opacity="0.3"/>
+                    <g style="transform-origin: 340px 145px; animation: empSpin 7s linear infinite;">
+                        <polygon points="340,145 338,100 342,100" fill="#e2e8f0" opacity="0.35"/>
+                        <polygon points="340,145 365,161 363,165" fill="#e2e8f0" opacity="0.35"/>
+                        <polygon points="340,145 315,161 317,165" fill="#e2e8f0" opacity="0.35"/>
+                    </g>
+                </g>
+
+                <!-- Solar Panels -->
+                <g transform="translate(560, 195)">
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                </g>
+
+                <g transform="translate(625, 198)">
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                </g>
+
+                <g transform="translate(690, 200)">
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
+                    <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                </g>
+
+                <!-- Power flow dotted line -->
+                <path d="M155 230 Q250 222 400 225 Q500 220 560 228" stroke="#22c55e" stroke-width="1" opacity="0.15" fill="none" stroke-dasharray="4 4"/>
+
+                <!-- Trees / bushes -->
+                <circle cx="80" cy="235" r="10" fill="#15803d" opacity="0.3"/>
+                <circle cx="90" cy="232" r="8" fill="#166534" opacity="0.35"/>
+                <circle cx="72" cy="237" r="7" fill="#14532d" opacity="0.3"/>
+                <circle cx="450" cy="228" r="8" fill="#15803d" opacity="0.25"/>
+                <circle cx="460" cy="225" r="6" fill="#166534" opacity="0.3"/>
+                <circle cx="250" cy="233" r="6" fill="#15803d" opacity="0.2"/>
+                <circle cx="258" cy="231" r="5" fill="#166534" opacity="0.25"/>
+
+                <!-- Energy particles -->
+                <circle cx="0" cy="0" r="2.5" fill="#22c55e" opacity="0.8">
+                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,230 Q300,218 560,225"/>
+                    <animate attributeName="opacity" values="0;0.8;0.8;0" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="0" cy="0" r="1.5" fill="#4ade80" opacity="0.6">
+                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,230 Q300,218 560,225" begin="2.5s"/>
+                    <animate attributeName="opacity" values="0;0.6;0.6;0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+                </circle>
+            </svg>
+        </div>
+
         <div class="emp-badge">
             <span class="emp-badge-dot"></span>
-            Site în construcție
+            Site în construcție — Energie Verde
         </div>
 
         <h1>
             Energie electrică<br>
-            <span class="emp-gradient">de la sursă la consumator</span>
+            <span class="emp-gradient">curată, de la sursă la consumator</span>
         </h1>
 
         <p class="emp-hero-sub">
-            EMP reunește sub un singur acoperiș <strong>producția</strong>, <strong>distribuția</strong>
-            și <strong>furnizarea</strong> de energie electrică — soluții complete
-            pentru sectorul industrial și consumatori.
+            EMP reunește <strong>producția din surse regenerabile</strong>,
+            <strong>distribuția</strong> și <strong>furnizarea</strong> de energie electrică —
+            soluții verzi și sustenabile pentru un viitor mai curat.
         </p>
+
+        <!-- Eco Stats -->
+        <div class="emp-eco-stats">
+            <div class="emp-eco-stat">
+                <div class="emp-eco-stat-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </div>
+                <div class="emp-eco-stat-value">100%</div>
+                <div class="emp-eco-stat-label">Regenerabilă</div>
+            </div>
+            <div class="emp-eco-stat">
+                <div class="emp-eco-stat-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10"/><path d="M17 8c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg>
+                </div>
+                <div class="emp-eco-stat-value">0</div>
+                <div class="emp-eco-stat-label">Emisii CO₂</div>
+            </div>
+            <div class="emp-eco-stat">
+                <div class="emp-eco-stat-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <div class="emp-eco-stat-value">24/7</div>
+                <div class="emp-eco-stat-label">Alimentare</div>
+            </div>
+            <div class="emp-eco-stat">
+                <div class="emp-eco-stat-icon">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="emp-eco-stat-value">ANRE</div>
+                <div class="emp-eco-stat-label">Licențiat</div>
+            </div>
+        </div>
 
         <!-- Division Cards -->
         <div class="emp-divisions">
-
-            <!-- EM POWER -->
             <div class="emp-card emp-card-power">
-                <div class="emp-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                <div class="emp-card-icon-row">
+                    <div class="emp-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="12" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="8" y1="4" x2="8" y2="16"/><line x1="16" y1="4" x2="16" y2="16"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="8" y1="20" x2="16" y2="20"/></svg>
+                    </div>
+                    <div>
+                        <h3>EM Power</h3>
+                        <div class="emp-card-entity">EM Power S.R.L.</div>
+                    </div>
                 </div>
-                <h3>EM Power</h3>
-                <div class="emp-card-entity">EM Power S.R.L.</div>
-                <p>Producerea energiei electrice din surse regenerabile și furnizarea acesteia către consumatori, aliniate cu viziunea energetică 2025–2050.</p>
+                <p>Producerea energiei electrice din <strong style="color: var(--emp-green-light);">surse regenerabile</strong> și furnizarea acesteia către consumatori — aliniate cu Strategia Energetică 2025–2050.</p>
                 <div class="emp-card-tags">
-                    <span class="emp-tag">Producție</span>
-                    <span class="emp-tag">Furnizare</span>
-                    <span class="emp-tag">Regenerabil</span>
+                    <span class="emp-tag">☀️ Producție</span>
+                    <span class="emp-tag">⚡ Furnizare</span>
+                    <span class="emp-tag">🌱 Regenerabil</span>
                 </div>
             </div>
 
-            <!-- EMP GRID -->
             <div class="emp-card emp-card-grid">
-                <div class="emp-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                <div class="emp-card-icon-row">
+                    <div class="emp-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div>
+                        <h3>EMP Grid</h3>
+                        <div class="emp-card-entity">EMP Grid S.R.L.</div>
+                    </div>
                 </div>
-                <h3>EMP Grid</h3>
-                <div class="emp-card-entity">EMP Grid S.R.L.</div>
-                <p>Distribuție de energie electrică, service echipamente energetice, mentenanță și intervenții pe platforma industrială IMGB și nu numai.</p>
+                <p>Distribuție de energie electrică, service echipamente energetice, mentenanță și intervenții — platforma IMGB, Floresca, Energeticienilor.</p>
                 <div class="emp-card-tags">
-                    <span class="emp-tag">Distribuție</span>
-                    <span class="emp-tag">Service</span>
-                    <span class="emp-tag">Mentenanță</span>
+                    <span class="emp-tag">🔌 Distribuție</span>
+                    <span class="emp-tag">🔧 Service</span>
+                    <span class="emp-tag">🛡️ Mentenanță</span>
                 </div>
             </div>
-
         </div>
 
         <!-- Electric Line -->
@@ -678,9 +1020,10 @@
 
         <!-- Coming Soon -->
         <div class="emp-coming">
-            <div class="emp-coming-label">Coming Soon</div>
+            <div class="emp-coming-label">🌿 Coming Soon</div>
             <p class="emp-coming-text">
-                Lucrăm la noul site unificat EMP. Între timp ne puteți contacta telefonic sau pe email la adresele de mai jos.
+                Lucrăm la noul site unificat EMP — un ecosistem energetic verde.
+                Între timp ne puteți contacta telefonic sau pe email.
             </p>
             <div class="emp-progress-wrap">
                 <div class="emp-progress-header">
@@ -716,6 +1059,10 @@
                     Email: <a href="mailto:office.power@em.ro">office.power@em.ro</a>
                 </div>
             </div>
+            <div class="emp-footer-eco">
+                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg>
+                Angajament pentru energie curată și sustenabilă
+            </div>
             <div class="emp-footer-copy">
                 © 2025 EMP — Toate drepturile rezervate.
             </div>
@@ -725,7 +1072,6 @@
 </div>
 
 <script>
-    // Animate progress bar on load
     window.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             document.getElementById('empProgress').style.width = '75%';
