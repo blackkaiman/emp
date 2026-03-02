@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP — Energie Electrică | Producție · Distribuție · Furnizare</title>
+    <meta name="description" content="EMP reunește sub un singur acoperiș producția, distribuția și furnizarea de energie electrică. Soluții energetice complete pentru sectorul industrial și consumatori.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* =============================================
+           EMP.RO — Coming Soon Landing Page
+           Tema: Dark Energy — #0a0f1c + Electric Blue
+           ============================================= */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --emp-dark: #0a0f1c;
+            --emp-dark-mid: #111827;
+            --emp-dark-card: #151c2e;
+            --emp-blue: #3b82f6;
+            --emp-blue-light: #60a5fa;
+            --emp-cyan: #22d3ee;
+            --emp-green: #10b981;
+            --emp-amber: #f59e0b;
+            --emp-white: #f1f5f9;
+            --emp-gray: #94a3b8;
+            --emp-gray-dark: #475569;
+            --emp-border: rgba(59, 130, 246, 0.15);
+            --emp-glow: rgba(59, 130, 246, 0.4);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--emp-dark);
+            color: var(--emp-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === ANIMATED BACKGROUND === */
+        .emp-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .emp-bg-grid {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .emp-bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: empFloat 20s ease-in-out infinite;
+        }
+
+        .emp-bg-orb-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--emp-blue) 0%, transparent 70%);
+            top: -200px; right: -150px;
+            animation-delay: 0s;
+        }
+
+        .emp-bg-orb-2 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--emp-cyan) 0%, transparent 70%);
+            bottom: -100px; left: -100px;
+            animation-delay: -7s;
+        }
+
+        .emp-bg-orb-3 {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, var(--emp-green) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+            opacity: 0.15;
+        }
+
+        @keyframes empFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 15px) scale(0.95); }
+        }
+
+        /* === WRAPPER === */
+        .emp-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === HEADER / NAV === */
+        .emp-header {
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .emp-logo {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            text-decoration: none;
+        }
+
+        .emp-logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--emp-white);
+        }
+
+        .emp-logo-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--emp-blue);
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 2px;
+            box-shadow: 0 0 12px var(--emp-glow);
+            animation: empPulse 2s ease-in-out infinite;
+        }
+
+        .emp-logo-sub {
+            font-size: 0.65rem;
+            color: var(--emp-gray);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-top: -2px;
+        }
+
+        @keyframes empPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--emp-glow); }
+            50% { opacity: 0.6; box-shadow: 0 0 24px var(--emp-glow), 0 0 48px rgba(59, 130, 246, 0.2); }
+        }
+
+        .emp-header-contact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--emp-gray);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .emp-header-contact svg {
+            width: 16px;
+            height: 16px;
+            color: var(--emp-green);
+        }
+
+        .emp-header-contact a {
+            color: var(--emp-white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .emp-header-contact a:hover {
+            color: var(--emp-blue-light);
+        }
+
+        /* === HERO === */
+        .emp-hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .emp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--emp-border);
+            border-radius: 100px;
+            padding: 8px 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--emp-blue-light);
+            letter-spacing: 0.5px;
+            margin-bottom: 32px;
+            animation: empFadeUp 0.8s ease-out both;
+        }
+
+        .emp-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--emp-green);
+            border-radius: 50%;
+            animation: empPulse 2s ease-in-out infinite;
+        }
+
+        .emp-hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            animation: empFadeUp 0.8s ease-out 0.15s both;
+        }
+
+        .emp-hero h1 .emp-gradient {
+            background: linear-gradient(135deg, var(--emp-blue-light) 0%, var(--emp-cyan) 50%, var(--emp-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .emp-hero-sub {
+            font-size: 1.15rem;
+            color: var(--emp-gray);
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+            font-weight: 400;
+            animation: empFadeUp 0.8s ease-out 0.3s both;
+        }
+
+        @keyframes empFadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === DIVISION CARDS === */
+        .emp-divisions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 760px;
+            margin-bottom: 56px;
+            animation: empFadeUp 0.8s ease-out 0.45s both;
+        }
+
+        .emp-card {
+            background: var(--emp-dark-card);
+            border: 1px solid var(--emp-border);
+            border-radius: 20px;
+            padding: 32px 28px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .emp-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.35);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.08);
+        }
+
+        .emp-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .emp-card-power::before {
+            background: linear-gradient(90deg, var(--emp-blue) 0%, var(--emp-cyan) 100%);
+        }
+
+        .emp-card-grid::before {
+            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-amber) 100%);
+        }
+
+        .emp-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .emp-card-power .emp-card-icon {
+            background: rgba(59, 130, 246, 0.12);
+            color: var(--emp-blue-light);
+        }
+
+        .emp-card-grid .emp-card-icon {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--emp-green);
+        }
+
+        .emp-card-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .emp-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .emp-card-entity {
+            font-size: 0.72rem;
+            color: var(--emp-gray-dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+
+        .emp-card p {
+            font-size: 0.88rem;
+            color: var(--emp-gray);
+            line-height: 1.6;
+        }
+
+        .emp-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        .emp-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .emp-card-power .emp-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--emp-blue-light);
+        }
+
+        .emp-card-grid .emp-tag {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--emp-green);
+        }
+
+        /* === COMING SOON SECTION === */
+        .emp-coming {
+            text-align: center;
+            animation: empFadeUp 0.8s ease-out 0.6s both;
+            margin-bottom: 40px;
+        }
+
+        .emp-coming-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--emp-gray-dark);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .emp-coming-text {
+            font-size: 1rem;
+            color: var(--emp-gray);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === PROGRESS BAR === */
+        .emp-progress-wrap {
+            width: 100%;
+            max-width: 400px;
+            margin: 24px auto 0;
+        }
+
+        .emp-progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .emp-progress-header span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--emp-gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .emp-progress-header strong {
+            font-size: 0.78rem;
+            color: var(--emp-blue-light);
+        }
+
+        .emp-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .emp-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--emp-blue) 0%, var(--emp-cyan) 100%);
+            border-radius: 10px;
+            transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+        }
+
+        /* === BOTTOM INFO === */
+        .emp-footer {
+            padding: 40px 40px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .emp-footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .emp-footer-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--emp-gray-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .emp-footer-address {
+            font-size: 0.85rem;
+            color: var(--emp-gray);
+            line-height: 1.6;
+        }
+
+        .emp-footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .emp-footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-end;
+        }
+
+        .emp-phone-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--emp-gray);
+        }
+
+        .emp-phone-line strong {
+            color: var(--emp-white);
+            font-weight: 600;
+        }
+
+        .emp-phone-line a {
+            color: var(--emp-white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .emp-phone-line a:hover {
+            color: var(--emp-blue-light);
+        }
+
+        .emp-footer-copy {
+            font-size: 0.72rem;
+            color: var(--emp-gray-dark);
+            margin-top: 8px;
+        }
+
+        /* === ELECTRIC LINE ANIMATION === */
+        .emp-line {
+            position: relative;
+            width: 100%;
+            max-width: 760px;
+            height: 1px;
+            background: var(--emp-border);
+            margin: 0 auto 40px;
+            overflow: visible;
+        }
+
+        .emp-line::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--emp-blue), var(--emp-cyan), transparent);
+            border-radius: 10px;
+            animation: empSpark 3s ease-in-out infinite;
+        }
+
+        @keyframes empSpark {
+            0% { left: -80px; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: calc(100% + 80px); opacity: 0; }
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .emp-header {
+                padding: 20px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .emp-hero {
+                padding: 24px 20px 40px;
+            }
+
+            .emp-divisions {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .emp-card {
+                padding: 24px 22px;
+            }
+
+            .emp-footer {
+                padding: 32px 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .emp-footer-right {
+                align-items: flex-start;
+            }
+
+            .emp-footer-phones {
+                align-items: flex-start;
+            }
+
+            .emp-logo-text {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .emp-hero h1 {
+                font-size: 2rem;
+            }
+
+            .emp-card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="emp-bg">
+    <div class="emp-bg-grid"></div>
+    <div class="emp-bg-orb emp-bg-orb-1"></div>
+    <div class="emp-bg-orb emp-bg-orb-2"></div>
+    <div class="emp-bg-orb emp-bg-orb-3"></div>
+</div>
+
+<div class="emp-wrapper">
+
+    <!-- Header -->
+    <header class="emp-header">
+        <a href="/" class="emp-logo">
+            <div>
+                <div class="emp-logo-text">EMP<span class="emp-logo-dot"></span></div>
+                <div class="emp-logo-sub">Energie Electrică</div>
+            </div>
+        </a>
+        <div class="emp-header-contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            TelVerde: <a href="tel:0800400401">0800 400 401</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="emp-hero">
+
+        <div class="emp-badge">
+            <span class="emp-badge-dot"></span>
+            Site în construcție
+        </div>
+
+        <h1>
+            Energie electrică<br>
+            <span class="emp-gradient">de la sursă la consumator</span>
+        </h1>
+
+        <p class="emp-hero-sub">
+            EMP reunește sub un singur acoperiș <strong>producția</strong>, <strong>distribuția</strong>
+            și <strong>furnizarea</strong> de energie electrică — soluții complete
+            pentru sectorul industrial și consumatori.
+        </p>
+
+        <!-- Division Cards -->
+        <div class="emp-divisions">
+
+            <!-- EM POWER -->
+            <div class="emp-card emp-card-power">
+                <div class="emp-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h3>EM Power</h3>
+                <div class="emp-card-entity">EM Power S.R.L.</div>
+                <p>Producerea energiei electrice din surse regenerabile și furnizarea acesteia către consumatori, aliniate cu viziunea energetică 2025–2050.</p>
+                <div class="emp-card-tags">
+                    <span class="emp-tag">Producție</span>
+                    <span class="emp-tag">Furnizare</span>
+                    <span class="emp-tag">Regenerabil</span>
+                </div>
+            </div>
+
+            <!-- EMP GRID -->
+            <div class="emp-card emp-card-grid">
+                <div class="emp-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <h3>EMP Grid</h3>
+                <div class="emp-card-entity">EMP Grid S.R.L.</div>
+                <p>Distribuție de energie electrică, service echipamente energetice, mentenanță și intervenții pe platforma industrială IMGB și nu numai.</p>
+                <div class="emp-card-tags">
+                    <span class="emp-tag">Distribuție</span>
+                    <span class="emp-tag">Service</span>
+                    <span class="emp-tag">Mentenanță</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Electric Line -->
+        <div class="emp-line"></div>
+
+        <!-- Coming Soon -->
+        <div class="emp-coming">
+            <div class="emp-coming-label">Coming Soon</div>
+            <p class="emp-coming-text">
+                Lucrăm la noul site unificat EMP. Între timp ne puteți contacta telefonic sau pe email la adresele de mai jos.
+            </p>
+            <div class="emp-progress-wrap">
+                <div class="emp-progress-header">
+                    <span>Progres</span>
+                    <strong>75%</strong>
+                </div>
+                <div class="emp-progress-bar">
+                    <div class="emp-progress-fill" id="empProgress"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="emp-footer">
+        <div class="emp-footer-left">
+            <div class="emp-footer-label">Sediu</div>
+            <div class="emp-footer-address">
+                Bd. Națiunile Unite nr. 4, bloc 107A, et. 2,<br>
+                birouri A2, B2 și C2, Sector 5, București
+            </div>
+        </div>
+        <div class="emp-footer-right">
+            <div class="emp-footer-phones">
+                <div class="emp-phone-line">
+                    Furnizare: <a href="tel:0310050496">0310 050 496</a>
+                </div>
+                <div class="emp-phone-line">
+                    Distribuție: <a href="tel:0310050497">0310 050 497</a> / <a href="tel:0310050498">0310 050 498</a>
+                </div>
+                <div class="emp-phone-line">
+                    Email: <a href="mailto:office.power@em.ro">office.power@em.ro</a>
+                </div>
+            </div>
+            <div class="emp-footer-copy">
+                © 2025 EMP — Toate drepturile rezervate.
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    // Animate progress bar on load
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.getElementById('empProgress').style.width = '75%';
+        }, 600);
+    });
+</script>
+
+</body>
+</html>
