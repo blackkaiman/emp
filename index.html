@@ -261,15 +261,17 @@
             width: 100vw;
             max-width: 100vw;
             margin-left: calc(-50vw + 50%);
-            margin-bottom: 32px;
+            margin-bottom: 0;
             animation: empFadeUp 0.8s ease-out both;
             overflow: hidden;
+            line-height: 0;
         }
 
         .emp-hero-illustration svg {
             width: 100%;
             height: auto;
             display: block;
+            min-height: 200px;
         }
 
         .emp-badge {
@@ -791,7 +793,9 @@
 
         <!-- Renewable Energy Landscape Illustration -->
         <div class="emp-hero-illustration">
-            <svg viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 800 260" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background matching page -->
+                <rect x="0" y="0" width="800" height="260" fill="#0a1a0f"/>
                 <defs>
                     <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stop-color="#f59e0b"/>
