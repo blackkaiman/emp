@@ -12,7 +12,7 @@
     <style>
         /* =============================================
            EMP.RO — Coming Soon Landing Page
-           Tema: Eco Energy — Dark + Green Renewable
+           Tema: Clean White + Eco Green Futurist
            ============================================= */
         *, *::before, *::after {
             margin: 0;
@@ -21,37 +21,53 @@
         }
 
         :root {
-            --emp-dark: #0a1a0f;
-            --emp-dark-mid: #0f1f14;
-            --emp-dark-card: #0f2318;
-            --emp-green: #22c55e;
+            /* ——— Light, clean foundation ——— */
+            --emp-bg: #ffffff;
+            --emp-bg-warm: #f8fdf9;
+            --emp-bg-section: #f0faf2;
+            --emp-card-bg: #ffffff;
+            --emp-card-border: rgba(34, 197, 94, 0.12);
+            --emp-card-shadow: rgba(16, 185, 129, 0.06);
+
+            /* ——— Typography ——— */
+            --emp-text: #0f172a;
+            --emp-text-secondary: #475569;
+            --emp-text-muted: #94a3b8;
+            --emp-text-light: #64748b;
+
+            /* ——— Eco Green accents ——— */
+            --emp-green: #16a34a;
+            --emp-green-vivid: #22c55e;
             --emp-green-light: #4ade80;
-            --emp-green-pale: #86efac;
+            --emp-green-pale: #bbf7d0;
+            --emp-green-wash: rgba(34, 197, 94, 0.06);
             --emp-emerald: #10b981;
-            --emp-teal: #14b8a6;
-            --emp-lime: #a3e635;
+            --emp-teal: #0d9488;
+            --emp-teal-light: #14b8a6;
+            --emp-lime: #84cc16;
+            --emp-sky: #0ea5e9;
             --emp-amber: #f59e0b;
-            --emp-sky: #38bdf8;
-            --emp-white: #f0fdf4;
-            --emp-gray: #94a3b8;
-            --emp-gray-green: #6b9080;
-            --emp-gray-dark: #3d5a4a;
+
+            /* ——— Effects ——— */
             --emp-border: rgba(34, 197, 94, 0.15);
-            --emp-glow: rgba(34, 197, 94, 0.4);
+            --emp-glow: rgba(34, 197, 94, 0.35);
+            --emp-shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            --emp-shadow-md: 0 4px 20px rgba(16, 185, 129, 0.08), 0 2px 8px rgba(0,0,0,0.04);
+            --emp-shadow-lg: 0 12px 40px rgba(16, 185, 129, 0.1), 0 4px 16px rgba(0,0,0,0.05);
         }
 
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--emp-dark);
-            color: var(--emp-white);
+            background-color: var(--emp-bg);
+            color: var(--emp-text);
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* === ANIMATED BACKGROUND === */
+        /* === SUBTLE ANIMATED BACKGROUND === */
         .emp-bg {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -64,38 +80,36 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                linear-gradient(rgba(34, 197, 94, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(34, 197, 94, 0.025) 1px, transparent 1px);
-            background-size: 60px 60px;
+                linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
         }
 
         .emp-bg-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.25;
-            animation: empFloat 25s ease-in-out infinite;
+            filter: blur(140px);
+            animation: empFloat 30s ease-in-out infinite;
         }
 
         .emp-bg-orb-1 {
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, var(--emp-green) 0%, transparent 70%);
-            top: -200px; right: -150px;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.07) 0%, transparent 70%);
+            top: -250px; right: -200px;
         }
 
         .emp-bg-orb-2 {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, var(--emp-teal) 0%, transparent 70%);
-            bottom: -150px; left: -100px;
-            animation-delay: -8s;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
+            bottom: -200px; left: -150px;
+            animation-delay: -10s;
         }
 
         .emp-bg-orb-3 {
-            width: 350px; height: 350px;
-            background: radial-gradient(circle, var(--emp-lime) 0%, transparent 70%);
-            top: 40%; left: 60%;
-            animation-delay: -16s;
-            opacity: 0.12;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(132, 204, 22, 0.05) 0%, transparent 70%);
+            top: 45%; left: 55%;
+            animation-delay: -18s;
         }
 
         @keyframes empFloat {
@@ -114,18 +128,18 @@
         }
 
         .emp-leaf svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--emp-green);
-            opacity: 0.12;
+            width: 18px;
+            height: 18px;
+            fill: var(--emp-green-vivid);
+            opacity: 0.1;
         }
 
-        .emp-leaf:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; }
-        .emp-leaf:nth-child(2) { left: 25%; animation-duration: 22s; animation-delay: -4s; }
-        .emp-leaf:nth-child(3) { left: 45%; animation-duration: 20s; animation-delay: -8s; }
-        .emp-leaf:nth-child(4) { left: 65%; animation-duration: 24s; animation-delay: -12s; }
-        .emp-leaf:nth-child(5) { left: 82%; animation-duration: 19s; animation-delay: -6s; }
-        .emp-leaf:nth-child(6) { left: 55%; animation-duration: 26s; animation-delay: -15s; }
+        .emp-leaf:nth-child(1) { left: 10%; animation-duration: 20s; animation-delay: 0s; }
+        .emp-leaf:nth-child(2) { left: 25%; animation-duration: 24s; animation-delay: -5s; }
+        .emp-leaf:nth-child(3) { left: 45%; animation-duration: 22s; animation-delay: -10s; }
+        .emp-leaf:nth-child(4) { left: 65%; animation-duration: 26s; animation-delay: -14s; }
+        .emp-leaf:nth-child(5) { left: 82%; animation-duration: 21s; animation-delay: -7s; }
+        .emp-leaf:nth-child(6) { left: 55%; animation-duration: 28s; animation-delay: -17s; }
 
         @keyframes empLeafFall {
             0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
@@ -149,6 +163,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(34, 197, 94, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .emp-header-left {
@@ -170,13 +191,13 @@
             font-size: 2rem;
             font-weight: 800;
             letter-spacing: -1px;
-            color: var(--emp-white);
+            color: var(--emp-text);
         }
 
         .emp-logo-dot {
             width: 10px;
             height: 10px;
-            background: var(--emp-green);
+            background: var(--emp-green-vivid);
             border-radius: 50%;
             display: inline-block;
             margin-left: 2px;
@@ -186,7 +207,7 @@
 
         .emp-logo-sub {
             font-size: 0.65rem;
-            color: var(--emp-gray-green);
+            color: var(--emp-text-muted);
             letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 500;
@@ -197,13 +218,13 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
+            background: var(--emp-green-wash);
+            border: 1px solid rgba(34, 197, 94, 0.15);
             border-radius: 100px;
             padding: 4px 12px;
             font-size: 0.65rem;
             font-weight: 600;
-            color: var(--emp-green-light);
+            color: var(--emp-green);
             letter-spacing: 0.5px;
         }
 
@@ -214,14 +235,14 @@
 
         @keyframes empPulse {
             0%, 100% { opacity: 1; box-shadow: 0 0 12px var(--emp-glow); }
-            50% { opacity: 0.6; box-shadow: 0 0 24px var(--emp-glow), 0 0 48px rgba(34, 197, 94, 0.15); }
+            50% { opacity: 0.6; box-shadow: 0 0 24px var(--emp-glow), 0 0 48px rgba(34, 197, 94, 0.1); }
         }
 
         .emp-header-contact {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--emp-gray);
+            color: var(--emp-text-muted);
             font-size: 0.85rem;
             font-weight: 500;
         }
@@ -233,13 +254,14 @@
         }
 
         .emp-header-contact a {
-            color: var(--emp-white);
+            color: var(--emp-text);
             text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
         .emp-header-contact a:hover {
-            color: var(--emp-green-light);
+            color: var(--emp-green);
         }
 
         /* === HERO === */
@@ -265,6 +287,7 @@
             animation: empFadeUp 0.8s ease-out both;
             overflow: hidden;
             line-height: 0;
+            background: linear-gradient(180deg, #e8faf0 0%, #ffffff 100%);
         }
 
         .emp-hero-illustration svg {
@@ -278,22 +301,23 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(34, 197, 94, 0.08);
+            background: var(--emp-green-wash);
             border: 1px solid var(--emp-border);
             border-radius: 100px;
             padding: 8px 20px;
             font-size: 0.78rem;
             font-weight: 600;
-            color: var(--emp-green-light);
+            color: var(--emp-green);
             letter-spacing: 0.5px;
             margin-bottom: 28px;
+            margin-top: 40px;
             animation: empFadeUp 0.8s ease-out 0.1s both;
         }
 
         .emp-badge-dot {
             width: 8px;
             height: 8px;
-            background: var(--emp-green);
+            background: var(--emp-green-vivid);
             border-radius: 50%;
             animation: empPulse 2s ease-in-out infinite;
         }
@@ -305,11 +329,12 @@
             line-height: 1.1;
             letter-spacing: -1.5px;
             margin-bottom: 20px;
+            color: var(--emp-text);
             animation: empFadeUp 0.8s ease-out 0.2s both;
         }
 
         .emp-hero h1 .emp-gradient {
-            background: linear-gradient(135deg, var(--emp-green-light) 0%, var(--emp-teal) 40%, var(--emp-sky) 100%);
+            background: linear-gradient(135deg, var(--emp-green) 0%, var(--emp-teal) 50%, var(--emp-sky) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -317,7 +342,7 @@
 
         .emp-hero-sub {
             font-size: 1.1rem;
-            color: var(--emp-gray);
+            color: var(--emp-text-secondary);
             max-width: 580px;
             line-height: 1.75;
             margin-bottom: 40px;
@@ -326,7 +351,8 @@
         }
 
         .emp-hero-sub strong {
-            color: var(--emp-green-pale);
+            color: var(--emp-green);
+            font-weight: 600;
         }
 
         @keyframes empFadeUp {
@@ -348,10 +374,11 @@
         }
 
         .emp-eco-stat-icon {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             margin: 0 auto 8px;
-            background: rgba(34, 197, 94, 0.1);
+            background: var(--emp-green-wash);
+            border: 1px solid rgba(34, 197, 94, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -361,7 +388,7 @@
         .emp-eco-stat-icon svg {
             width: 20px;
             height: 20px;
-            color: var(--emp-green-light);
+            color: var(--emp-green);
             stroke: currentColor;
             fill: none;
         }
@@ -370,13 +397,13 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.6rem;
             font-weight: 800;
-            color: var(--emp-white);
+            color: var(--emp-text);
             letter-spacing: -0.5px;
         }
 
         .emp-eco-stat-label {
             font-size: 0.7rem;
-            color: var(--emp-gray-green);
+            color: var(--emp-text-muted);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -395,20 +422,21 @@
         }
 
         .emp-card {
-            background: var(--emp-dark-card);
-            border: 1px solid var(--emp-border);
+            background: var(--emp-card-bg);
+            border: 1px solid var(--emp-card-border);
             border-radius: 20px;
             padding: 28px 24px;
             text-align: left;
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--emp-shadow-sm);
         }
 
         .emp-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(34, 197, 94, 0.35);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px rgba(34, 197, 94, 0.06);
+            border-color: rgba(34, 197, 94, 0.3);
+            box-shadow: var(--emp-shadow-lg);
         }
 
         .emp-card::before {
@@ -420,11 +448,11 @@
         }
 
         .emp-card-power::before {
-            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-teal) 100%);
+            background: linear-gradient(90deg, var(--emp-green-vivid) 0%, var(--emp-teal-light) 100%);
         }
 
         .emp-card-grid::before {
-            background: linear-gradient(90deg, var(--emp-teal) 0%, var(--emp-sky) 100%);
+            background: linear-gradient(90deg, var(--emp-teal-light) 0%, var(--emp-sky) 100%);
         }
 
         .emp-card-icon-row {
@@ -445,12 +473,12 @@
         }
 
         .emp-card-power .emp-card-icon {
-            background: rgba(34, 197, 94, 0.12);
-            color: var(--emp-green-light);
+            background: rgba(34, 197, 94, 0.08);
+            color: var(--emp-green);
         }
 
         .emp-card-grid .emp-card-icon {
-            background: rgba(20, 184, 166, 0.12);
+            background: rgba(20, 184, 166, 0.08);
             color: var(--emp-teal);
         }
 
@@ -464,11 +492,12 @@
             font-size: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.3px;
+            color: var(--emp-text);
         }
 
         .emp-card-entity {
             font-size: 0.68rem;
-            color: var(--emp-gray-dark);
+            color: var(--emp-text-muted);
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -476,7 +505,7 @@
 
         .emp-card p {
             font-size: 0.85rem;
-            color: var(--emp-gray);
+            color: var(--emp-text-secondary);
             line-height: 1.65;
         }
 
@@ -496,12 +525,12 @@
         }
 
         .emp-card-power .emp-tag {
-            background: rgba(34, 197, 94, 0.1);
-            color: var(--emp-green-light);
+            background: rgba(34, 197, 94, 0.07);
+            color: var(--emp-green);
         }
 
         .emp-card-grid .emp-tag {
-            background: rgba(20, 184, 166, 0.1);
+            background: rgba(20, 184, 166, 0.07);
             color: var(--emp-teal);
         }
 
@@ -523,7 +552,7 @@
             left: 0;
             width: 100px;
             height: 5px;
-            background: linear-gradient(90deg, transparent, var(--emp-green), var(--emp-teal), transparent);
+            background: linear-gradient(90deg, transparent, var(--emp-green-vivid), var(--emp-teal-light), transparent);
             border-radius: 10px;
             animation: empSpark 4s ease-in-out infinite;
         }
@@ -545,7 +574,7 @@
         .emp-coming-label {
             font-size: 0.75rem;
             font-weight: 700;
-            color: var(--emp-gray-dark);
+            color: var(--emp-text-muted);
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 16px;
@@ -553,7 +582,7 @@
 
         .emp-coming-text {
             font-size: 0.95rem;
-            color: var(--emp-gray);
+            color: var(--emp-text-secondary);
             max-width: 480px;
             margin: 0 auto;
             line-height: 1.7;
@@ -574,20 +603,20 @@
         .emp-progress-header span {
             font-size: 0.72rem;
             font-weight: 600;
-            color: var(--emp-gray-dark);
+            color: var(--emp-text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .emp-progress-header strong {
             font-size: 0.78rem;
-            color: var(--emp-green-light);
+            color: var(--emp-green);
         }
 
         .emp-progress-bar {
             width: 100%;
             height: 6px;
-            background: rgba(34, 197, 94, 0.1);
+            background: rgba(34, 197, 94, 0.08);
             border-radius: 10px;
             overflow: hidden;
         }
@@ -595,10 +624,10 @@
         .emp-progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, var(--emp-green) 0%, var(--emp-teal) 60%, var(--emp-sky) 100%);
+            background: linear-gradient(90deg, var(--emp-green-vivid) 0%, var(--emp-teal-light) 60%, var(--emp-sky) 100%);
             border-radius: 10px;
             transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
-            box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
         }
 
         /* === FOOTER === */
@@ -609,7 +638,8 @@
             align-items: flex-end;
             flex-wrap: wrap;
             gap: 24px;
-            border-top: 1px solid rgba(34, 197, 94, 0.08);
+            border-top: 1px solid rgba(34, 197, 94, 0.1);
+            background: var(--emp-bg-warm);
         }
 
         .emp-footer-left {
@@ -621,14 +651,14 @@
         .emp-footer-label {
             font-size: 0.68rem;
             font-weight: 700;
-            color: var(--emp-gray-dark);
+            color: var(--emp-text-muted);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .emp-footer-address {
             font-size: 0.85rem;
-            color: var(--emp-gray);
+            color: var(--emp-text-secondary);
             line-height: 1.6;
         }
 
@@ -651,18 +681,18 @@
             align-items: center;
             gap: 8px;
             font-size: 0.82rem;
-            color: var(--emp-gray);
+            color: var(--emp-text-secondary);
         }
 
         .emp-phone-line a {
-            color: var(--emp-white);
+            color: var(--emp-text);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
 
         .emp-phone-line a:hover {
-            color: var(--emp-green-light);
+            color: var(--emp-green);
         }
 
         .emp-footer-eco {
@@ -670,20 +700,20 @@
             align-items: center;
             gap: 6px;
             font-size: 0.7rem;
-            color: var(--emp-gray-green);
+            color: var(--emp-text-muted);
             margin-top: 4px;
         }
 
         .emp-footer-eco svg {
             width: 14px;
             height: 14px;
-            fill: var(--emp-green);
-            opacity: 0.6;
+            fill: var(--emp-green-vivid);
+            opacity: 0.5;
         }
 
         .emp-footer-copy {
             font-size: 0.72rem;
-            color: var(--emp-gray-dark);
+            color: var(--emp-text-muted);
             margin-top: 4px;
         }
 
@@ -750,7 +780,7 @@
 </head>
 <body>
 
-<!-- Animated Background -->
+<!-- Subtle Animated Background -->
 <div class="emp-bg">
     <div class="emp-bg-grid"></div>
     <div class="emp-bg-orb emp-bg-orb-1"></div>
@@ -793,13 +823,17 @@
 
         <!-- Renewable Energy Landscape Illustration -->
         <div class="emp-hero-illustration">
-            <svg viewBox="0 0 800 260" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Background matching page -->
-                <rect x="0" y="0" width="800" height="260" fill="#0a1a0f"/>
+            <svg viewBox="0 0 800 280" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Light sky gradient background -->
                 <defs>
+                    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#e0f7ec"/>
+                        <stop offset="50%" stop-color="#ecfdf5"/>
+                        <stop offset="100%" stop-color="#ffffff"/>
+                    </linearGradient>
                     <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#f59e0b"/>
-                        <stop offset="100%" stop-color="#fb923c"/>
+                        <stop offset="0%" stop-color="#fbbf24"/>
+                        <stop offset="100%" stop-color="#f59e0b"/>
                     </linearGradient>
                     <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stop-color="#1e3a5f"/>
@@ -810,126 +844,151 @@
                         <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.05"/>
                     </linearGradient>
                     <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#15803d" stop-opacity="0.3"/>
-                        <stop offset="100%" stop-color="#166534" stop-opacity="0.6"/>
+                        <stop offset="0%" stop-color="#86efac"/>
+                        <stop offset="100%" stop-color="#4ade80"/>
                     </linearGradient>
                     <linearGradient id="hillGrad2" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="#14532d" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#052e16" stop-opacity="0.7"/>
+                        <stop offset="0%" stop-color="#4ade80"/>
+                        <stop offset="100%" stop-color="#22c55e"/>
+                    </linearGradient>
+                    <linearGradient id="hillGrad3" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#22c55e"/>
+                        <stop offset="100%" stop-color="#16a34a"/>
                     </linearGradient>
                 </defs>
 
+                <!-- Sky -->
+                <rect x="0" y="0" width="800" height="280" fill="url(#skyGrad)"/>
+
+                <!-- Soft clouds -->
+                <ellipse cx="180" cy="60" rx="60" ry="18" fill="white" opacity="0.6"/>
+                <ellipse cx="160" cy="58" rx="40" ry="14" fill="white" opacity="0.5"/>
+                <ellipse cx="580" cy="45" rx="50" ry="14" fill="white" opacity="0.5"/>
+                <ellipse cx="560" cy="42" rx="35" ry="11" fill="white" opacity="0.4"/>
+                <ellipse cx="380" cy="75" rx="35" ry="10" fill="white" opacity="0.35"/>
+
                 <!-- Sun -->
-                <circle cx="650" cy="55" r="28" fill="url(#sunGrad)" opacity="0.8">
-                    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+                <circle cx="680" cy="55" r="32" fill="url(#sunGrad)" opacity="0.85">
+                    <animate attributeName="opacity" values="0.7;0.9;0.7" dur="4s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="650" cy="55" r="42" fill="#f59e0b" opacity="0.08">
-                    <animate attributeName="r" values="42;50;42" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.08;0.15;0.08" dur="4s" repeatCount="indefinite"/>
+                <circle cx="680" cy="55" r="48" fill="#fbbf24" opacity="0.08">
+                    <animate attributeName="r" values="48;56;48" dur="4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.06;0.12;0.06" dur="4s" repeatCount="indefinite"/>
                 </circle>
 
                 <!-- Sun rays -->
                 <g opacity="0.15" stroke="#f59e0b" stroke-width="1.5">
-                    <line x1="650" y1="10" x2="650" y2="20"/><line x1="650" y1="90" x2="650" y2="100"/>
-                    <line x1="605" y1="55" x2="615" y2="55"/><line x1="685" y1="55" x2="695" y2="55"/>
-                    <line x1="618" y1="23" x2="625" y2="30"/><line x1="675" y1="80" x2="682" y2="87"/>
-                    <line x1="682" y1="23" x2="675" y2="30"/><line x1="625" y1="80" x2="618" y2="87"/>
+                    <line x1="680" y1="8" x2="680" y2="20"/>
+                    <line x1="680" y1="90" x2="680" y2="102"/>
+                    <line x1="633" y1="55" x2="645" y2="55"/>
+                    <line x1="715" y1="55" x2="727" y2="55"/>
+                    <line x1="648" y1="23" x2="656" y2="31"/>
+                    <line x1="704" y1="79" x2="712" y2="87"/>
+                    <line x1="712" y1="23" x2="704" y2="31"/>
+                    <line x1="656" y1="79" x2="648" y2="87"/>
                 </g>
 
-                <!-- Hills -->
-                <path d="M0 200 Q100 140 200 170 Q350 120 450 160 Q550 130 650 155 Q750 140 800 150 L800 260 L0 260Z" fill="url(#hillGrad)"/>
-                <path d="M0 220 Q150 180 300 200 Q450 170 550 195 Q700 175 800 190 L800 260 L0 260Z" fill="url(#hillGrad2)"/>
+                <!-- Rolling hills (3 layers for depth) -->
+                <path d="M0 195 Q100 140 200 165 Q350 115 450 155 Q550 125 650 150 Q750 135 800 145 L800 280 L0 280Z" fill="url(#hillGrad)" opacity="0.5"/>
+                <path d="M0 215 Q150 175 300 195 Q450 165 550 190 Q700 170 800 185 L800 280 L0 280Z" fill="url(#hillGrad2)" opacity="0.6"/>
+                <path d="M0 245 Q200 230 400 238 Q600 228 800 240 L800 280 L0 280Z" fill="url(#hillGrad3)" opacity="0.7"/>
 
                 <!-- Ground line -->
-                <path d="M0 230 Q200 220 400 225 Q600 222 800 228" stroke="#22c55e" stroke-width="1" opacity="0.2" fill="none"/>
+                <path d="M0 250 Q200 240 400 245 Q600 240 800 248" stroke="#16a34a" stroke-width="1" opacity="0.2" fill="none"/>
 
-                <!-- Wind Turbine 1 (large) -->
+                <!-- Wind Turbine 1 (large, foreground) -->
                 <g>
-                    <polygon points="150,230 145,100 155,100" fill="#94a3b8" opacity="0.5"/>
-                    <circle cx="150" cy="100" r="5" fill="#e2e8f0" opacity="0.6"/>
+                    <rect x="147" y="100" width="6" height="148" rx="3" fill="#e2e8f0" opacity="0.8"/>
+                    <circle cx="150" cy="100" r="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
                     <g style="transform-origin: 150px 100px; animation: empSpin 6s linear infinite;">
-                        <polygon points="150,100 146,32 154,32" fill="#e2e8f0" opacity="0.7"/>
-                        <polygon points="150,100 191,131 187,137" fill="#e2e8f0" opacity="0.7"/>
-                        <polygon points="150,100 109,131 113,137" fill="#e2e8f0" opacity="0.7"/>
+                        <polygon points="150,100 146,28 154,28" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" opacity="0.9"/>
+                        <polygon points="150,100 195,133 191,139" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" opacity="0.9"/>
+                        <polygon points="150,100 105,133 109,139" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" opacity="0.9"/>
                     </g>
                 </g>
 
-                <!-- Wind Turbine 2 (medium, back) -->
+                <!-- Wind Turbine 2 (medium, mid-ground) -->
                 <g>
-                    <polygon points="520,230 516,130 524,130" fill="#94a3b8" opacity="0.35"/>
-                    <circle cx="520" cy="130" r="4" fill="#e2e8f0" opacity="0.45"/>
+                    <rect x="518" y="130" width="5" height="108" rx="2.5" fill="#e2e8f0" opacity="0.6"/>
+                    <circle cx="520" cy="130" r="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" opacity="0.7"/>
                     <g style="transform-origin: 520px 130px; animation: empSpin 8s linear infinite;">
-                        <polygon points="520,130 517,75 523,75" fill="#e2e8f0" opacity="0.5"/>
-                        <polygon points="520,130 553,152 550,157" fill="#e2e8f0" opacity="0.5"/>
-                        <polygon points="520,130 487,152 490,157" fill="#e2e8f0" opacity="0.5"/>
+                        <polygon points="520,130 517,72 523,72" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" opacity="0.7"/>
+                        <polygon points="520,130 555,154 552,159" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" opacity="0.7"/>
+                        <polygon points="520,130 485,154 488,159" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.4" opacity="0.7"/>
                     </g>
                 </g>
 
                 <!-- Wind Turbine 3 (small, distant) -->
                 <g>
-                    <polygon points="340,230 337,145 343,145" fill="#94a3b8" opacity="0.25"/>
-                    <circle cx="340" cy="145" r="3" fill="#e2e8f0" opacity="0.3"/>
-                    <g style="transform-origin: 340px 145px; animation: empSpin 7s linear infinite;">
-                        <polygon points="340,145 338,100 342,100" fill="#e2e8f0" opacity="0.35"/>
-                        <polygon points="340,145 365,161 363,165" fill="#e2e8f0" opacity="0.35"/>
-                        <polygon points="340,145 315,161 317,165" fill="#e2e8f0" opacity="0.35"/>
+                    <rect x="339" y="148" width="3" height="90" rx="1.5" fill="#e2e8f0" opacity="0.4"/>
+                    <circle cx="340" cy="148" r="3.5" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" opacity="0.5"/>
+                    <g style="transform-origin: 340px 148px; animation: empSpin 7s linear infinite;">
+                        <polygon points="340,148 338,102 342,102" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.3" opacity="0.5"/>
+                        <polygon points="340,148 367,165 365,169" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.3" opacity="0.5"/>
+                        <polygon points="340,148 313,165 315,169" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.3" opacity="0.5"/>
                     </g>
                 </g>
 
                 <!-- Solar Panels -->
-                <g transform="translate(560, 195)">
+                <g transform="translate(560, 200)">
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
-                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="42" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
                 </g>
 
-                <g transform="translate(625, 198)">
+                <g transform="translate(625, 203)">
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
-                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="42" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
                 </g>
 
-                <g transform="translate(690, 200)">
+                <g transform="translate(690, 206)">
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelGrad)" transform="skewY(-8)"/>
                     <rect x="0" y="0" width="50" height="28" rx="2" fill="url(#panelShine)" transform="skewY(-8)"/>
-                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.2" transform="skewY(-8)"/>
-                    <line x1="25" y1="28" x2="25" y2="40" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
+                    <line x1="12" y1="0" x2="12" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="0" x2="25" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="37" y1="0" x2="37" y2="28" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="9" x2="50" y2="9" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="0" y1="19" x2="50" y2="19" stroke="#38bdf8" stroke-width="0.5" opacity="0.25" transform="skewY(-8)"/>
+                    <line x1="25" y1="28" x2="25" y2="42" stroke="#94a3b8" stroke-width="2" opacity="0.4" transform="skewY(-8)"/>
                 </g>
 
                 <!-- Power flow dotted line -->
-                <path d="M155 230 Q250 222 400 225 Q500 220 560 228" stroke="#22c55e" stroke-width="1" opacity="0.15" fill="none" stroke-dasharray="4 4"/>
+                <path d="M155 248 Q250 240 400 244 Q500 238 560 245" stroke="#16a34a" stroke-width="1.2" opacity="0.2" fill="none" stroke-dasharray="4 4"/>
 
                 <!-- Trees / bushes -->
-                <circle cx="80" cy="235" r="10" fill="#15803d" opacity="0.3"/>
-                <circle cx="90" cy="232" r="8" fill="#166534" opacity="0.35"/>
-                <circle cx="72" cy="237" r="7" fill="#14532d" opacity="0.3"/>
-                <circle cx="450" cy="228" r="8" fill="#15803d" opacity="0.25"/>
-                <circle cx="460" cy="225" r="6" fill="#166534" opacity="0.3"/>
-                <circle cx="250" cy="233" r="6" fill="#15803d" opacity="0.2"/>
-                <circle cx="258" cy="231" r="5" fill="#166534" opacity="0.25"/>
+                <circle cx="78" cy="250" r="12" fill="#4ade80" opacity="0.5"/>
+                <circle cx="90" cy="247" r="10" fill="#22c55e" opacity="0.55"/>
+                <circle cx="68" cy="253" r="9" fill="#16a34a" opacity="0.5"/>
+                <circle cx="450" cy="243" r="9" fill="#4ade80" opacity="0.45"/>
+                <circle cx="461" cy="240" r="7" fill="#22c55e" opacity="0.5"/>
+                <circle cx="248" cy="248" r="7" fill="#4ade80" opacity="0.4"/>
+                <circle cx="257" cy="246" r="6" fill="#22c55e" opacity="0.45"/>
+
+                <!-- Small flowers on hills -->
+                <circle cx="200" cy="240" r="2" fill="#fbbf24" opacity="0.5"/>
+                <circle cx="350" cy="244" r="1.5" fill="#fb923c" opacity="0.4"/>
+                <circle cx="490" cy="238" r="2" fill="#fbbf24" opacity="0.45"/>
+                <circle cx="120" cy="247" r="1.5" fill="#f472b6" opacity="0.35"/>
 
                 <!-- Energy particles -->
-                <circle cx="0" cy="0" r="2.5" fill="#22c55e" opacity="0.8">
-                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,230 Q300,218 560,225"/>
-                    <animate attributeName="opacity" values="0;0.8;0.8;0" dur="5s" repeatCount="indefinite"/>
+                <circle cx="0" cy="0" r="3" fill="#22c55e" opacity="0.7">
+                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,248 Q300,236 560,243"/>
+                    <animate attributeName="opacity" values="0;0.7;0.7;0" dur="5s" repeatCount="indefinite"/>
                 </circle>
-                <circle cx="0" cy="0" r="1.5" fill="#4ade80" opacity="0.6">
-                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,230 Q300,218 560,225" begin="2.5s"/>
-                    <animate attributeName="opacity" values="0;0.6;0.6;0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
+                <circle cx="0" cy="0" r="2" fill="#4ade80" opacity="0.5">
+                    <animateMotion dur="5s" repeatCount="indefinite" path="M155,248 Q300,236 560,243" begin="2.5s"/>
+                    <animate attributeName="opacity" values="0;0.5;0.5;0" dur="5s" repeatCount="indefinite" begin="2.5s"/>
                 </circle>
             </svg>
         </div>
@@ -994,7 +1053,7 @@
                         <div class="emp-card-entity">EM Power S.R.L.</div>
                     </div>
                 </div>
-                <p>Producerea energiei electrice din <strong style="color: var(--emp-green-light);">surse regenerabile</strong> și furnizarea acesteia către consumatori — aliniate cu Strategia Energetică 2025–2050.</p>
+                <p>Producerea energiei electrice din <strong style="color: var(--emp-green);">surse regenerabile</strong> și furnizarea acesteia către consumatori — aliniate cu Strategia Energetică 2025–2050.</p>
                 <div class="emp-card-tags">
                     <span class="emp-tag">☀️ Producție</span>
                     <span class="emp-tag">⚡ Furnizare</span>
