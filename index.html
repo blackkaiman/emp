@@ -175,11 +175,10 @@
             z-index: 10;
         }
 
-        .emp-header-left {
+        .emp-header-right {
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
+            gap: 20px;
         }
 
         .emp-logo {
@@ -727,12 +726,19 @@
         /* === RESPONSIVE === */
         @media (max-width: 768px) {
             .emp-header {
-                padding: 24px 24px;
-                flex-direction: column;
-                gap: 16px;
+                padding: 20px 16px;
             }
 
-            .emp-logo-eco { margin-left: 0; margin-top: 4px; }
+            .emp-header-right {
+                gap: 12px;
+            }
+
+            .emp-header-contact span,
+            .emp-header-contact svg { display: none; }
+            .emp-header-contact a { font-size: 0.8rem; }
+
+            .emp-logo-text { font-size: 1.6rem; }
+            .emp-logo-sub { font-size: 0.55rem; letter-spacing: 2px; }
 
             .emp-hero {
                 padding: 12px 20px 40px;
@@ -768,6 +774,7 @@
         }
 
         @media (max-width: 480px) {
+            .emp-logo-eco { display: none; }
             .emp-eco-stats { gap: 12px; }
             .emp-eco-stat-icon { width: 34px; height: 34px; }
             .emp-eco-stat-icon svg { width: 16px; height: 16px; }
@@ -801,21 +808,21 @@
 
     <!-- Header -->
     <header class="emp-header">
-        <div class="emp-header-left">
-            <a href="/" class="emp-logo">
-                <div>
-                    <div class="emp-logo-text">EMP<span class="emp-logo-dot"></span></div>
-                    <div class="emp-logo-sub">Energie Electrică</div>
-                </div>
-            </a>
+        <a href="/" class="emp-logo">
+            <div>
+                <div class="emp-logo-text">EMP<span class="emp-logo-dot"></span></div>
+                <div class="emp-logo-sub">Energie Electrică</div>
+            </div>
+        </a>
+        <div class="emp-header-right">
             <span class="emp-logo-eco">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.28-4.95 9-10m0 0c.83-.5 2-1 3-1 0 0-1.12 4-4 6.5"/></svg>
                 Energie Verde
             </span>
-        </div>
-        <div class="emp-header-contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            TelVerde: <a href="tel:0800400401">0800 400 401</a>
+            <div class="emp-header-contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                TelVerde: <a href="tel:0800400401">0800 400 401</a>
+            </div>
         </div>
     </header>
 
